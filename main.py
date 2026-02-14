@@ -13,7 +13,7 @@ CREATE TABLE IF NOT EXISTS techniciens (
     prenom TEXT NOT NULL,
     age INTEGER,
     specialite TEXT,
-    niveau TEXT,
+    niveau_etude TEXT,
     experience INTEGER,
     domaine TEXT,
     grade TEXT,
@@ -26,6 +26,8 @@ CREATE TABLE IF NOT EXISTS techniciens (
 connexion.commit()
 
 connexion.close()
+
+
 
 
 
