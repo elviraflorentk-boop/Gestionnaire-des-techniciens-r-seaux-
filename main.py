@@ -1,5 +1,6 @@
 import tkinter as tk 
 import sqlite3
+from tkinter import ttk 
 
 
 connexion=sqlite3.connect("Techniciens.db")
@@ -58,5 +59,7 @@ zone3.place(x=70,y=82)
 
 label4=tk.Label(frame1,text="Sexe",font="Anton 11",bg="white")
 label4.place(x=3,y=109)
+
+
 
 app.mainloop()
