@@ -13,7 +13,7 @@ CREATE TABLE IF NOT EXISTS techniciens (
     nom TEXT NOT NULL,
     prenom TEXT NOT NULL,
     age INTEGER,
-    sexe TEXT CHECK(sexe IN ('H','F')) NOT NULL,
+    sexe TEXT CHECK(sexe IN ('HOMME','FEMME')) NOT NULL,
     specialite TEXT,
     niveau_etude TEXT,
     experience INTEGER,
@@ -64,6 +64,9 @@ combo=ttk.Combobox(frame1,values=["Homme","Femme"])
 combo.set("Sélectionner")
 combo.place(x=70,y=110)
 
+
+label5=tk.Label(frame1,text="Spécialité",font="Anton 11",bg="white")
+label5.place(x=3,y=148)
 
 
 app.mainloop()
