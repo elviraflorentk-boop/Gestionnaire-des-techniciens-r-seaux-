@@ -44,4 +44,6 @@ zone1.place(x=110,y=14)
 label2=tk.Label(frame1,text="Prénom",font="Anton 18",bg="gray")
 label2.place(x=3,y=43)
 
+#Prof ! Ceci je le note juste pour signaler certaines modifications au code, plus j'avance et je rentre parfois en arrière pour modifier certains détails comme la couleur, ou la position de la zone1 par exemple
+
 app.mainloop()
