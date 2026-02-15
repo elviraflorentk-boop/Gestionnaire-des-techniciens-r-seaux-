@@ -93,5 +93,17 @@ check_var2=tk.IntVar()
 check_var3=tk.IntVar()
 check_var4=tk.IntVar()
 
+checkbutton=tk.Checkbutton(app,text="Entreprise",variable=check_var1)
+checkbutton.place(x=97,y=285)
+
+checkbutton=tk.Checkbutton(app,text="Banque",variable=check_var2)
+checkbutton.place(x=200,y=285)
+
+checkbutton=tk.Checkbutton(app,text="Télécom",variable=check_var3)
+checkbutton.place(x=200,y=310)
+
+checkbutton=tk.Checkbutton(app,text="Université",variable=check_var4)
+checkbutton.place(x=97,y=310)
+
 
 app.mainloop()
