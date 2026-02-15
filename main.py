@@ -68,5 +68,8 @@ combo.place(x=70,y=110)
 label5=tk.Label(frame1,text="Spécialité",font="Anton 11",bg="white")
 label5.place(x=3,y=148)
 
+zone5=tk.Entry(frame1,bg="white")
+zone5.place(x=78,y=151)
+
 
 app.mainloop()
