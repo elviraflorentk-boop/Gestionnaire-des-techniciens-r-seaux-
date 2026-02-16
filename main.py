@@ -111,4 +111,7 @@ label9.place(x=7,y=335)
 zone9=tk.Entry(app,bg="white")
 zone9.place(x=120,y=338)
 
+label10=tk.Label(app,text="Téléphone",font="Anton 11",bg="white")
+label10.place(x=7,y=372)
+
 app.mainloop()
