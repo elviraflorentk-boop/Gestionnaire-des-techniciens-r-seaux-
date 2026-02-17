@@ -136,4 +136,7 @@ buton1.place(x=7,y=490)
 buton2=tk.Button(app,text="Modifier",width=15)
 buton2.place(x=150,y=490)
 
+buton3=tk.Button(app,text="Supprimer",width=15)
+buton3.place(x=7,y=530)
+
 app.mainloop()
