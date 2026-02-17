@@ -133,4 +133,7 @@ combo.place(x=110,y=445)
 buton1=tk.Button(app,text="Ajouter",width=15)
 buton1.place(x=7,y=490)
 
+buton2=tk.Button(app,text="Modifier",width=15)
+buton2.place(x=150,y=490)
+
 app.mainloop()
