@@ -28,8 +28,6 @@ connexion.commit()
 connexion.close()
 
 
-
-
 app=tk.Tk()
 app.geometry("800x600")
 app.title("Gestionnaire des techniciens")
@@ -140,10 +138,10 @@ buton1.place(x=7,y=490)
 buton2=tk.Button(app,text="Modifier",width=15)
 buton2.place(x=150,y=490)
 
-buton3=tk.Button(app,text="Supprimer",width=15)
+buton3=tk.Button(app,text="Supprimer",width=15,)
 buton3.place(x=7,y=530)
 
-buton4=tk.Button(app,text="Afficher",width=15)
+buton4=tk.Button(app,text="Afficher",width=15,)
 buton4.place(x=150,y=530)
 
 buton5=tk.Button(app,text="Rechercher",width=35)
@@ -151,5 +149,17 @@ buton5.place(x=7,y=576)
 
 frame2=tk.LabelFrame(app,bg="white",height=600,width=900)
 frame2.place(x=300,y=3)
+
+colonnes=("ID","Nom","Prénom","Sexe","Âge","Spécialié","Niveau d'étude","Expérience","Domaine","Grade","Téléphone","Email","Ville")
+liste=ttk.Treeview(app,columns=colonnes,show="headings",height=29,)
+for col in colonnes:
+    liste.heading(col, text=col)
+    liste.column(col, width=73)
+liste.grid(row=0, column=3, rowspan=10, padx=300,pady=3)
+liste.bind("<<TreeviewSelect>>")
+
+
+
+
 
 app.mainloop()
