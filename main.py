@@ -132,7 +132,7 @@ combo=ttk.Combobox(app,values=["Kinshsa","Matadi","Boma","Moanda","Kanga","Bukav
 combo.set("Sélectionner")
 combo.place(x=110,y=445)
 
-buton1=tk.Button(app,text="Ajouter",width=15)
+buton1=tk.Button(app,text="Ajouter",width=15,command=ajouter_technicien)
 buton1.place(x=7,y=490)
 
 buton2=tk.Button(app,text="Modifier",width=15)
