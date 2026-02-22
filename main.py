@@ -39,6 +39,33 @@ def ajouter_technicien():
     if not zone1.get() or not zone2.get() :
         messagebox.showerror("Erreur", "Nom et Prénom obligatoires")
         return
+    
+    with connexion:
+        connexion.execute("""
+        INSERT INTO patient (nom, prenom, sexe, age, contact, adresse, date_enregistrement)
+        VALUES (?, ?, ?, ?, ?, ?, ?)
+        """, (
+            zone1.get(),
+            zone2.get(),
+            int(zone3.get()),
+            combo.get(),
+            zone5.get(),
+            zone6.get(),
+            zone7.get(),
+            zone8.get(),
+            check_var1.get(),
+            check_var2.get(),
+            check_var3.get(),
+            check_var4.get(),
+            zone10.get(),
+            zone11.get(),
+            combo.get(),
+            date.today()
+        ))
+    afficher_technicien()
+    liberer_champs()
+    messagebox.showinfo("Succès", "Technicien ajouté")
+
         
 
 frame1=tk.LabelFrame(app,text="Informations Techniciens",width=236,height=17,bg="white",font="Anton 11",fg="black")
