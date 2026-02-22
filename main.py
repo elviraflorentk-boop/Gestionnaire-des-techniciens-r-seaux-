@@ -4,11 +4,12 @@ from tkinter import ttk
 from tkinter import messagebox
 from datetime import date
 
-connexion = sqlite3.connect("techniciens.db")
+
+connexion = sqlite3.connect("Techniciens.db")
 curseur = connexion.cursor()
 
 curseur.execute("""
-CREATE TABLE IF NOT EXISTS techniciens (
+CREATE TABLE IF NOT EXISTS Techniciens (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     nom TEXT NOT NULL,
     prenom TEXT NOT NULL,
@@ -27,47 +28,12 @@ CREATE TABLE IF NOT EXISTS techniciens (
 """)
 
 connexion.commit()
-connexion.close()
 
 
 app=tk.Tk()
 app.geometry("800x600")
 app.title("Gestionnaire des techniciens")
 
-def ajouter_technicien():
-    nom=zone1.get()
-    prenom=zone2.get()
-    if not zone1.get() or not zone2.get() :
-        messagebox.showerror("Erreur", "Nom et Prénom obligatoires")
-        return
-    
-    with connexion:
-        connexion.execute("""
-        INSERT INTO patient (nom, prenom, sexe, age, contact, adresse, date_enregistrement)
-        VALUES (?, ?, ?, ?, ?, ?, ?)
-        """, (
-            zone1.get(),
-            zone2.get(),
-            int(zone3.get()),
-            combo.get(),
-            zone5.get(),
-            zone6.get(),
-            zone7.get(),
-            zone8.get(),
-            check_var1.get(),
-            check_var2.get(),
-            check_var3.get(),
-            check_var4.get(),
-            zone10.get(),
-            zone11.get(),
-            combo.get(),
-            date.today()
-        ))
-    afficher_technicien()
-    liberer_champs()
-    messagebox.showinfo("Succès", "Technicien ajouté")
-
-        
 
 frame1=tk.LabelFrame(app,text="Informations Techniciens",width=236,height=17,bg="white",font="Anton 11",fg="black")
 frame1.place(x=7,y=3)
@@ -96,9 +62,9 @@ zone3.place(x=120,y=105)
 label4=tk.Label(app,text="Sexe",font="Anton 11")
 label4.place(x=7,y=138)
 
-combo=ttk.Combobox(app,values=["Homme","Femme"])
-combo.set("Sélectionner")
-combo.place(x=110,y=138)
+combo_sexe=ttk.Combobox(app,values=["H","F"])
+combo_sexe.set("Sélectionner")
+combo_sexe.place(x=110,y=138)
 
 
 label5=tk.Label(app,text="Spécialité",font="Anton 11")
@@ -165,9 +131,9 @@ zone11.place(x=120,y=413)
 label12=tk.Label(app,text="Ville",font="Anton 11")
 label12.place(x=7,y=445)
 
-combo=ttk.Combobox(app,values=["Kinshsa","Matadi","Boma","Moanda","Kanga","Bukavu","Kindu","Goma","Beni","Kisangani"])
-combo.set("Sélectionner")
-combo.place(x=110,y=445)
+combo_ville=ttk.Combobox(app,values=["Kinshsa","Matadi","Boma","Moanda","Kanga","Bukavu","Kindu","Goma","Beni","Kisangani"])
+combo_ville.set("Sélectionner")
+combo_ville.place(x=110,y=445)
 
 buton1=tk.Button(app,text="Ajouter",width=15,command=ajouter_technicien)
 buton1.place(x=7,y=490)
@@ -187,7 +153,7 @@ buton5.place(x=7,y=576)
 #frame2=tk.LabelFrame(app,bg="white",height=600,width=900)
 #frame2.place(x=300,y=3)
 
-colonnes=("ID","Nom","Prénom","Sexe","Âge","Spécialié","Niveau d'étude","Expérience","Domaine","Grade","Téléphone","Email","Ville")
+colonnes=("id","nom","prenom","sexe","age","specialite","niveau_etude","experience","domaine","grade","telephone","email","ville")
 liste=ttk.Treeview(app,columns=colonnes,show="headings",height=29)
 for col in colonnes:
     liste.heading(col, text=col)
