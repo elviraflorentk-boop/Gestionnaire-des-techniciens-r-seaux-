@@ -2,6 +2,7 @@ import tkinter as tk
 import sqlite3
 from tkinter import ttk 
 from tkinter import messagebox
+from datetime import date
 
 connexion = sqlite3.connect("techniciens.db")
 curseur = connexion.cursor()
