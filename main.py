@@ -29,6 +29,41 @@ CREATE TABLE IF NOT EXISTS Techniciens (
 
 connexion.commit()
 
+def ajouter_technicien() :
+    nom=zone1.get()
+    prenom=zone2.get()
+    age=zone3.get()
+    sexe = combo_sexe.get()
+    specialite = zone5.get()
+    niveau = zone6.get()
+    experience = zone7.get()
+    domaine = zone8.get()
+    telephone = zone10.get()
+    email = zone11.get()
+    ville = combo_ville.get()
+    date_enregistrement = date.today().strftime("%Y-%m-%d")
+
+    if not zone1.get() or not zone2.get() :
+        messagebox.showerror("Erreur", "Nom et Prénom obligatoires")
+        return 
+    zone1.delete(0,tk.END)
+    zone2.delete(0,tk.END)
+
+    if check_var1.get() == 1:
+        grade = "Junior"
+    elif check_var2.get() == 1:
+        grade = "Intermédiaire"
+    elif check_var3.get() == 1:
+        grade = "Senior"
+    elif check_var4.get() == 1:
+        grade = "Chef d'équipe"
+    else:
+        grade = "" 
+
+    
+
+
+
 
 app=tk.Tk()
 app.geometry("800x600")
@@ -131,7 +166,7 @@ zone11.place(x=120,y=413)
 label12=tk.Label(app,text="Ville",font="Anton 11")
 label12.place(x=7,y=445)
 
-combo_ville=ttk.Combobox(app,values=["Kinshsa","Matadi","Boma","Moanda","Kanga","Bukavu","Kindu","Goma","Beni","Kisangani"])
+combo_ville=ttk.Combobox(app,values=["Kinshasa","Matadi","Boma","Moanda","Kanga","Bukavu","Kindu","Goma","Beni","Kisangani"])
 combo_ville.set("Sélectionner")
 combo_ville.place(x=110,y=445)
 
