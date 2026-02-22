@@ -1,6 +1,7 @@
 import tkinter as tk 
 import sqlite3
 from tkinter import ttk 
+from tkinter import messagebox
 
 connexion = sqlite3.connect("techniciens.db")
 curseur = connexion.cursor()
@@ -31,6 +32,14 @@ connexion.close()
 app=tk.Tk()
 app.geometry("800x600")
 app.title("Gestionnaire des techniciens")
+
+def ajouter_technicien():
+    nom=zone1.get()
+    prenom=zone2.get()
+    if not zone1.get() or not zone2.get() :
+        messagebox.showerror("Erreur", "Nom et Prénom obligatoires")
+        return
+        
 
 frame1=tk.LabelFrame(app,text="Informations Techniciens",width=236,height=17,bg="white",font="Anton 11",fg="black")
 frame1.place(x=7,y=3)
