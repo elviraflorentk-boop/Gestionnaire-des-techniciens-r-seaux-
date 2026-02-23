@@ -188,6 +188,23 @@ buton5.place(x=7,y=576)
 #frame2=tk.LabelFrame(app,bg="white",height=600,width=900)
 #frame2.place(x=300,y=3)
 
+bar1=tk.Menu(app)
+file1=tk.Menu(bar1,tearoff=0)
+file1.add_command(label='Modifier',command=action1)
+file1.add_command(label='Supprimer',command=action2)
+file1.add_command(label='Filtrer',command=action3)
+file1.add_command(label='Rechercher',command=action4)
+bar1.add_cascade(label='||| Menu',menu=file1)
+
+
+
+
+
+
+
+
+
+
 colonnes=("id","nom","prenom","sexe","age","specialite","niveau_etude","experience","domaine","grade","telephone","email","ville")
 liste=ttk.Treeview(app,columns=colonnes,show="headings",height=29)
 for col in colonnes:
