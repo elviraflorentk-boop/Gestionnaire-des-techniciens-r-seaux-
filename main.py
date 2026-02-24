@@ -47,6 +47,17 @@ def ajouter_technicien() :
     if not nom or not prenom:
         messagebox.showerror("Erreur", "Nom et Prénom obligatoires")
         return
+    
+    if check_var1.get() == 1:
+        grade = "Junior"
+    elif check_var2.get() == 1:
+        grade = "Intermédiaire"
+    elif check_var3.get() == 1:
+        grade = "Senior"
+    elif check_var4.get() == 1:
+        grade = "Chef d'équipe"
+    else:
+        grade = ""
 
 
 
