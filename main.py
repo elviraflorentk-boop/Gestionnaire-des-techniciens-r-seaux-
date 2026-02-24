@@ -145,6 +145,10 @@ def rechercher_technicien():
 
     liste.delete(*liste.get_children())
 
+    with sqlite3.connect("Techniciens.db") as connexion:
+        query = "SELECT * FROM Techniciens WHERE 1=1"
+        params = []
+
 
 
 
