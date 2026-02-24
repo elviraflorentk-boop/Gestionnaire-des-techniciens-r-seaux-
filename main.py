@@ -71,6 +71,9 @@ def ajouter_technicien() :
             date_enregistrement
         ))
 
+    afficher_techniciens()
+    messagebox.showinfo("Succès", "Technicien ajouté")
+
 
 
 
