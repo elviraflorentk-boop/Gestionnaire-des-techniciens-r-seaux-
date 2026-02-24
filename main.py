@@ -81,6 +81,12 @@ def afficher_techniciens():
         for row in connexion.execute("SELECT * FROM Techniciens"):
             liste.insert("", tk.END, values=row)
 
+def supprimer_technicien():
+    selection = liste.selection()
+    if not selection:
+        messagebox.showwarning("Attention", "Sélectionnez un technicien")
+        return
+
 
 
 
