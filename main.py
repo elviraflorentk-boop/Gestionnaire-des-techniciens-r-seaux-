@@ -29,10 +29,11 @@ CREATE TABLE IF NOT EXISTS Techniciens (
 
 connexion.commit()
 
+
 def ajouter_technicien() :
-    nom=zone1.get()
-    prenom=zone2.get()
-    age=zone3.get()
+    nom = zone1.get()
+    prenom = zone2.get()
+    age = zone3.get()
     sexe = combo_sexe.get()
     specialite = zone5.get()
     niveau = zone6.get()
@@ -43,24 +44,6 @@ def ajouter_technicien() :
     ville = combo_ville.get()
     date_enregistrement = date.today().strftime("%Y-%m-%d")
 
-    if not zone1.get() or not zone2.get() :
-        messagebox.showerror("Erreur", "Nom et Prénom obligatoires")
-        return 
-    zone1.delete(0,tk.END)
-    zone2.delete(0,tk.END)
-
-    if check_var1.get() == 1:
-        grade = "Junior"
-    elif check_var2.get() == 1:
-        grade = "Intermédiaire"
-    elif check_var3.get() == 1:
-        grade = "Senior"
-    elif check_var4.get() == 1:
-        grade = "Chef d'équipe"
-    else:
-        grade = "" 
-
-    
 
 
 
@@ -173,36 +156,20 @@ combo_ville.place(x=110,y=445)
 buton1=tk.Button(app,text="Ajouter",width=15,command=ajouter_technicien)
 buton1.place(x=7,y=490)
 
-buton2=tk.Button(app,text="Modifier",width=15)
+buton2=tk.Button(app,text="Modifier",width=15,command=modifier_technicien)
 buton2.place(x=150,y=490)
 
-buton3=tk.Button(app,text="Supprimer",width=15,)
+buton3=tk.Button(app,text="Supprimer",width=15,command=supprimer_technicien)
 buton3.place(x=7,y=530)
 
-buton4=tk.Button(app,text="Afficher",width=15,)
+buton4=tk.Button(app,text="Afficher",width=15,command=afficher_techniciens)
 buton4.place(x=150,y=530)
 
-buton5=tk.Button(app,text="Rechercher",width=35)
+buton5=tk.Button(app,text="Rechercher",width=35,command=rechercher_technicien)
 buton5.place(x=7,y=576)
 
 #frame2=tk.LabelFrame(app,bg="white",height=600,width=900)
 #frame2.place(x=300,y=3)
-
-bar1=tk.Menu(app)
-file1=tk.Menu(bar1,tearoff=0)
-file1.add_command(label='Modifier',command=action1)
-file1.add_command(label='Supprimer',command=action2)
-file1.add_command(label='Filtrer',command=action3)
-file1.add_command(label='Rechercher',command=action4)
-bar1.add_cascade(label='||| Menu',menu=file1)
-
-
-
-
-
-
-
-
 
 
 colonnes=("id","nom","prenom","sexe","age","specialite","niveau_etude","experience","domaine","grade","telephone","email","ville")
