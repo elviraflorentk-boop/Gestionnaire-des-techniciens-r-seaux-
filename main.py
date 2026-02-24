@@ -134,6 +134,18 @@ def rechercher_technicien():
     grade_recherche = None
     ville_recherche = combo_ville.get()
 
+    if check_var1.get() == 1:
+        grade_recherche = "Junior"
+    elif check_var2.get() == 1:
+        grade_recherche = "Intermédiaire"
+    elif check_var3.get() == 1:
+        grade_recherche = "Senior"
+    elif check_var4.get() == 1:
+        grade_recherche = "Chef d'équipe"
+
+    liste.delete(*liste.get_children())
+
+
 
 
 
