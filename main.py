@@ -86,6 +86,14 @@ def supprimer_technicien():
     if not selection:
         messagebox.showwarning("Attention", "Sélectionnez un technicien")
         return
+    
+    id_selectionne = liste.item(selection[0])["values"][0]
+
+    with sqlite3.connect("Techniciens.db") as connexion:
+        connexion.execute("DELETE FROM Techniciens WHERE id = ?", (id_selectionne,))
+
+    afficher_techniciens()
+    messagebox.showinfo("Succès", "Technicien supprimé")
 
 
 
