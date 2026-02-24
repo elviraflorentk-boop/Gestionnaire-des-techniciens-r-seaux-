@@ -59,6 +59,18 @@ def ajouter_technicien() :
     else:
         grade = ""
 
+    with sqlite3.connect("Techniciens.db") as connexion:
+        connexion.execute("""
+        INSERT INTO Techniciens
+        (nom, prenom, sexe, age, specialite, niveau_etude,
+         experience, domaine, grade, telephone, email, ville, date_enregistrement)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+        """, (
+            nom, prenom, sexe, age, specialite, niveau,
+            experience, domaine, grade, telephone, email, ville,
+            date_enregistrement
+        ))
+
 
 
 
