@@ -115,6 +115,18 @@ def modifier_technicien():
     email = zone11.get()
     ville = combo_ville.get()
 
+    with sqlite3.connect("Techniciens.db") as connexion:
+        connexion.execute("""
+        UPDATE Techniciens SET
+        nom=?, prenom=?, sexe=?, age=?, specialite=?, niveau_etude=?,
+        experience=?, domaine=?, telephone=?, email=?, ville=?
+        WHERE id=?
+        """, (
+            nom, prenom, sexe, age, specialite, niveau,
+            experience, domaine, telephone, email, ville,
+            id_selectionne
+        ))
+
 
 
 
