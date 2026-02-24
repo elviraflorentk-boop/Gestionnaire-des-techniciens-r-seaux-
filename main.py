@@ -149,6 +149,11 @@ def rechercher_technicien():
         query = "SELECT * FROM Techniciens WHERE 1=1"
         params = []
 
+        if grade_recherche:
+            query += " AND grade=?"
+            params.append(grade_recherche)
+
+
 
 
 
