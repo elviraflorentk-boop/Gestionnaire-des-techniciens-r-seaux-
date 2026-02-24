@@ -44,6 +44,10 @@ def ajouter_technicien() :
     ville = combo_ville.get()
     date_enregistrement = date.today().strftime("%Y-%m-%d")
 
+    if not nom or not prenom:
+        messagebox.showerror("Erreur", "Nom et Prénom obligatoires")
+        return
+
 
 
 
