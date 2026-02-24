@@ -127,6 +127,9 @@ def modifier_technicien():
             id_selectionne
         ))
 
+    afficher_techniciens()
+    messagebox.showinfo("Succès", "Technicien modifié")
+
 
 
 
