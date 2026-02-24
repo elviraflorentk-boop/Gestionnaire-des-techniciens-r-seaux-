@@ -74,6 +74,13 @@ def ajouter_technicien() :
     afficher_techniciens()
     messagebox.showinfo("Succès", "Technicien ajouté")
 
+def afficher_techniciens():
+    liste.delete(*liste.get_children())
+
+    with sqlite3.connect("Techniciens.db") as connexion:
+        for row in connexion.execute("SELECT * FROM Techniciens"):
+            liste.insert("", tk.END, values=row)
+
 
 
 
