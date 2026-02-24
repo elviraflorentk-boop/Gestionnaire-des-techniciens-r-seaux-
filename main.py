@@ -130,6 +130,11 @@ def modifier_technicien():
     afficher_techniciens()
     messagebox.showinfo("Succès", "Technicien modifié")
 
+def rechercher_technicien():
+    grade_recherche = None
+    ville_recherche = combo_ville.get()
+
+
 
 
 
