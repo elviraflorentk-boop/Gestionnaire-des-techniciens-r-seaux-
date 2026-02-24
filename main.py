@@ -153,6 +153,10 @@ def rechercher_technicien():
             query += " AND grade=?"
             params.append(grade_recherche)
 
+        if ville_recherche != "Sélectionner":
+            query += " AND ville=?"
+            params.append(ville_recherche)
+
 
 
 
