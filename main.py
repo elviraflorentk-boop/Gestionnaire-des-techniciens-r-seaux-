@@ -95,6 +95,14 @@ def supprimer_technicien():
     afficher_techniciens()
     messagebox.showinfo("Succès", "Technicien supprimé")
 
+def modifier_technicien():
+    selection = liste.selection()
+    if not selection:
+        messagebox.showwarning("Attention", "Sélectionnez un technicien")
+        return
+
+    id_selectionne = liste.item(selection[0])["values"][0]
+
 
 
 
