@@ -103,6 +103,18 @@ def modifier_technicien():
 
     id_selectionne = liste.item(selection[0])["values"][0]
 
+    nom = zone1.get()
+    prenom = zone2.get()
+    age = zone3.get()
+    sexe = combo_sexe.get()
+    specialite = zone5.get()
+    niveau = zone6.get()
+    experience = zone7.get()
+    domaine = zone8.get()
+    telephone = zone10.get()
+    email = zone11.get()
+    ville = combo_ville.get()
+
 
 
 
