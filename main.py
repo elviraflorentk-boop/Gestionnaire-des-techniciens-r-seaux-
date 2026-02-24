@@ -301,5 +301,7 @@ liste.bind("<<TreeviewSelect>>")
 # Toussaint kulunda je commance ici
 # Heritier kwaba je commence ici
 
+#Prof c'est le chef de groupe qui fait ce commentaire et vous demande si de comprendre si certaines personnes n'ont pas fait disons plus de commit, certains avaient des problemes des frais chose qui a fait en sortes a ce qu'ils n'assistent pas au cours et la ils ont travailles en fonction de mes explications et divers recherches, prieres d'etre indulgent
+
 
 app.mainloop()
