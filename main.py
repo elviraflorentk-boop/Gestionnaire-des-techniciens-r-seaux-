@@ -131,33 +131,51 @@ def modifier_technicien():
     messagebox.showinfo("Succès", "Technicien modifié")
 
 def rechercher_technicien():
-    grade_recherche = None
-    ville_recherche = combo_ville.get()
-
+    grade = None
     if check_var1.get() == 1:
-        grade_recherche = "Junior"
+        grade = "Junior"
     elif check_var2.get() == 1:
-        grade_recherche = "Intermédiaire"
+        grade = "Intermédiaire"
     elif check_var3.get() == 1:
-        grade_recherche = "Senior"
+        grade = "Senior"
     elif check_var4.get() == 1:
-        grade_recherche = "Chef d'équipe"
+        grade = "Chef d'équipe"
 
-    liste.delete(*liste.get_children())
+    ville = combo_ville.get()
+    
+    
+    
+    
+    
+    #grade_recherche = None
 
-    with sqlite3.connect("Techniciens.db") as connexion:
-        query = "SELECT * FROM Techniciens WHERE 1=1"
-        params = []
 
-        if grade_recherche:
-            query += " AND grade=?"
-            params.append(grade_recherche)
+    #ville_recherche = combo_ville.get()
 
-        if ville_recherche != "Sélectionner":
-            query += " AND ville=?"
-            params.append(ville_recherche)
-        for row in connexion.execute(query, params):
-            liste.insert("", tk.END, values=row)    
+    #if check_var1.get() == 1:
+    #    grade_recherche = "Junior"
+    #elif check_var2.get() == 1:
+    #    grade_recherche = "Intermédiaire"
+    #elif check_var3.get() == 1:
+    #    grade_recherche = "Senior"
+    #elif check_var4.get() == 1:
+    #    grade_recherche = "Chef d'équipe"
+
+    #liste.delete(*liste.get_children())
+
+    #with sqlite3.connect("Techniciens.db") as connexion:
+    #    query = "SELECT * FROM Techniciens WHERE 1=1"
+    #    params = []
+
+    #    if grade_recherche:
+    #        query += " AND grade=?"
+    #        params.append(grade_recherche)
+
+    #    if ville_recherche != "Sélectionner":
+     #       query += " AND ville=?"
+      #      params.append(ville_recherche)
+       # for row in connexion.execute(query, params):
+        #    liste.insert("", tk.END, values=row)    
 
 
 
@@ -270,6 +288,8 @@ label12.place(x=7,y=445)
 combo_ville=ttk.Combobox(app,values=["Kinshasa","Matadi","Boma","Moanda","Kanga","Bukavu","Kindu","Goma","Beni","Kisangani"])
 combo_ville.set("Sélectionner")
 combo_ville.place(x=110,y=445)
+
+
 
 buton1=tk.Button(app,text="Ajouter",width=15,command=ajouter_technicien)
 buton1.place(x=7,y=490)
