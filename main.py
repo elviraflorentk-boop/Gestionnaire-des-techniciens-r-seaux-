@@ -147,6 +147,9 @@ def rechercher_technicien():
         messagebox.showwarning("Attention", "Sélectionnez un grade ET une ville")
         return
     
+    liste.delete(*liste.get_children())
+
+    
     
     
     
