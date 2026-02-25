@@ -142,6 +142,10 @@ def rechercher_technicien():
         grade = "Chef d'équipe"
 
     ville = combo_ville.get()
+
+    if not grade or ville == "Sélectionner":
+        messagebox.showwarning("Attention", "Sélectionnez un grade ET une ville")
+        return
     
     
     
